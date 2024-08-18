@@ -1,0 +1,12 @@
+<div class="grid gap-y-8 h-fit">
+  <app-diagnosis-history
+    [diagnosis_history]="patient.diagnosis_history"
+  ></app-diagnosis-history>
+  <app-diagnosis-list
+    [diagnosis_list]="patient.diagnostic_list"
+  ></app-diagnosis-list>
+</div>
+<aside class="grid gap-y-8 h-fit -mt-3.5 pt-0">
+  <app-user-info [patient]="patient"></app-user-info>
+  <app-lab-result [results]="patient.lab_results"></app-lab-result>
+</aside>

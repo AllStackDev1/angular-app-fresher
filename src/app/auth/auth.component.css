@@ -1,0 +1,7 @@
+app-auth {
+  @apply flex flex-1;
+}
+
+app-login {
+  @apply flex w-full;
+}

@@ -1,0 +1,11 @@
+app-patient {
+  @apply grid gap-x-[3%] grid-cols-[65%_32%];
+}
+
+#legend-container ul > li:not(:last-child) {
+  @apply pb-3.5 border-b border-b-[#a8a8a8];
+}
+
+#legend-container ul li + li {
+  @apply mt-3.5;
+}

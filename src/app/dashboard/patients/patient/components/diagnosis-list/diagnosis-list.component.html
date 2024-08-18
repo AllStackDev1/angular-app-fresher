@@ -1,0 +1,23 @@
+<div class="p-4 rounded-2xl bg-white">
+  <h3 class="font-bold text-2xl">Diagnosis List</h3>
+  <div class="mt-4 max-h-[30vh] overflow-auto">
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="h-12 text-sm text-left bg-[#F6F7F8]">
+          <th class="rounded-l-xl pl-4">Problem/Diagnosis</th>
+          <th>Description</th>
+          <th class="rounded-r-xl">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of diagnosis_list; let i =$index; track i;) {
+        <tr class="h-12 text-sm text-left">
+          <td class="pl-4">{{ item.name }}</td>
+          <td class="max-w-xs">{{ item.description }}</td>
+          <td>{{ item.status }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="p-4 h-full flex flex-auto relative text-[#072635] bg-[#f6f7f8]">
+  <nav
+    class="fixed flex items-center px-6 justify-between rounded-full bg-white h-[72px] left-4 right-4"
+  >
+    <a routerLink="/">
+      <svg-icon src="/assets/images/logo.svg"></svg-icon>
+    </a>
+    <div class="gap-2.5 flex justify-between">
+      <a
+        routerLinkActive="rounded-full bg-[#01f0d0]"
+        class="gap-2 text-sm font-bold text-inherit px-4 py-3 flex items-center no-underline"
+        [routerLink]="['/', menu.name.toLowerCase()]"
+        *ngFor="let menu of menus"
+      >
+        <svg-icon src="{{ menu.icon }}"></svg-icon>
+        <span>
+          {{ menu.name }}
+        </span>
+      </a>
+    </div>
+    <div class="flex items-center">
+      <div class="flex gap-2">
+        <ng-container *ngIf="user$ | async as user">
+          <img [src]="user.avater" [alt]="user.name" />
+          <div class="flex flex-col">
+            <h4 class="font-bold text-sm">{{ user.name }}</h4>
+            <span class="text-sm text-[#707070]">{{ user.title }}</span>
+          </div>
+        </ng-container>
+      </div>
+      <div class="h-7 w-[1px] bg-[#EDEDED] mx-2"></div>
+      <div class="flex gap-2">
+        <button class="icon-button">
+          <svg-icon src="/assets/icons/settings.svg"></svg-icon>
+        </button>
+        <div class="relative inline-block">
+          <button class="icon-button" (click)="toggleMenu()">
+            <svg-icon src="/assets/icons/more.svg"></svg-icon>
+          </button>
+          <ul
+            class="absolute right-0 bg-[#F1F1F1] min-w-40 shadow-md z-10 {{isMenuOpen ? 'block' : 'hidden'}}"
+          >
+            <li (click)="onLogout()" class="flex px-4 py-4 space-x-3 justify-between cursor-pointer">
+              <span>Logout</span>
+              <svg-icon
+                src="/assets/icons/logout.svg"
+                class="w-4 h-4"
+              ></svg-icon>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

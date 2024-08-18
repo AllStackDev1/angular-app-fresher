@@ -1,0 +1,11 @@
+<div class="py-4 px-2 rounded-2xl bg-white h-5/6 overflow-hidden">
+  <h3 class="text-2xl font-bold">Lab Results</h3>
+  <div class="results text-xs mt-4 space-y-2 h-full overflow-auto">
+    <div class="result flex justify-between p-2 hover:bg-primary" *ngFor="let result of results">
+      <span>{{ result }}</span>
+      <button class="icon-button" title="Download file">
+        <svg-icon src="/assets/icons/download.svg"></svg-icon>
+      </button>
+    </div>
+  </div>
+</div>

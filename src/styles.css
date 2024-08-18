@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+a:active, button:active {
+  opacity: 0.2;
+}
+
+.icon-button {
+  @apply border-none cursor-pointer bg-transparent;
+}
+
+app-dashboard {
+  width: 100%;
+}
+
+app-overview, app-patients, app-schedule, app-messages, app-transactions {
+  display: flex;
+  flex: auto;
+}
