@@ -1,5 +1,5 @@
 {
-  "name": "coalition-test",
+  "name": "angular-app-fresher",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:coalition-test": "node dist/coalition-test/server/server.mjs"
+    "serve:ssr:angular-app-fresher": "node dist/angular-app-fresher/server/server.mjs"
   },
   "private": true,
   "dependencies": {

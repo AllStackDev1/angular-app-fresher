@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "coalition-test": {
+    "angular-app-fresher": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/coalition-test",
+            "outputPath": "dist/angular-app-fresher",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "coalition-test:build:production"
+              "buildTarget": "angular-app-fresher:build:production"
             },
             "development": {
-              "buildTarget": "coalition-test:build:development"
+              "buildTarget": "angular-app-fresher:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "coalition-test:build"
+            "buildTarget": "angular-app-fresher:build"
           }
         },
         "test": {
