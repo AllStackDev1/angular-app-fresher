@@ -1,7 +1,6 @@
 import { provideEffects } from '@ngrx/effects';
 import { provideRouter } from '@angular/router';
 import { ApplicationConfig } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { provideAngularSvgIcon } from 'angular-svg-icon';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
@@ -9,8 +8,8 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { ActionReducer, MetaReducer, provideStore } from '@ngrx/store';
 
 import { routes } from './app.routes';
-import { authReducer } from './shared/store/reducers/auth.reducer';
-import { AuthEffects } from './shared/store/effects/auth.effect';
+import { authReducer } from '@shared/store/reducers/auth.reducer';
+import { AuthEffects } from '@shared/store/effects/auth.effect';
 
 // add this
 if (globalThis.window === undefined) {

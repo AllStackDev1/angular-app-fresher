@@ -31,11 +31,11 @@ a:active, button:active {
   @apply border-none cursor-pointer bg-transparent;
 }
 
-app-dashboard {
+app-layout {
   width: 100%;
 }
 
-app-overview, app-patients, app-schedule, app-messages, app-transactions {
+app-overview, app-patients, app-schedule, app-message, app-transactions {
   display: flex;
   flex: auto;
 }

@@ -27,7 +27,9 @@
       "@auth/*": ["app/auth/*"],
       "@404/*": ["app/not-found/*"],
       "@shared/*": ["app/shared/*"],
+      "@Auth/*": ["app/modules/auth/*"],
       "@dashboard/*": ["app/dashboard/*"],
+      "@Dashboard/*": ["app/modules/dashboard/*"],
     }
   },
   "angularCompilerOptions": {

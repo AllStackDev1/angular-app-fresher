@@ -1,0 +1,32 @@
+<div class="p-4 rounded-2xl bg-white pt-6 shadow-sm">
+  <ng-container *ngIf="patient; else elseBlock">
+    <div class="flex items-center flex-col space-y-2">
+      <img
+      alt="{{ patient.name }}'s Avater"
+        src="{{ patient.profile_picture }}"
+        class="w-28 h-28 rounded-full border-8 border-primary"
+      />
+      <h3 class="font-bold text-2xl">{{ patient.name }}</h3>
+    </div>
+    <div class="my-6 text-sm">
+      <div
+        class="flex items-center space-x-3 py-1.5 px-1 mb-2.5"
+        *ngFor="let item of userInfoDetail"
+      >
+        <svg-icon src="{{ item.icon }}"></svg-icon>
+        <div>
+          <span>{{ item.title }}</span>
+          <h4 class="font-bold">{{ patient[item.id] }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center flex-col">
+      <button class="w-2/3 h-11 rounded-full font-bold bg-[#01f0d0]">
+        Show All Information
+      </button>
+    </div>
+  </ng-container>
+  <ng-template #elseBlock>
+    <p>No patient found</p>
+  </ng-template>
+</div>

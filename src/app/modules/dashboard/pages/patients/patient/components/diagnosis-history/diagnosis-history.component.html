@@ -1,0 +1,44 @@
+<div class="p-4 rounded-2xl bg-white space-y-4 shadow-sm">
+  <h3 class="text-2xl font-bold">Diagnosis History</h3>
+  <div class="p-4 rounded-xl grid gap-y-[2%] grid-cols-[68%_30%] bg-[#F4F0FE]">
+    <div>
+      <div class="flex justify-between items-center pb-2.5 pr-6">
+        <h4 class="text-lg font-bold">Blood Pressure</h4>
+        <select
+          class="outline-none bg-transparent cursor-pointer flex items-center text-sm"
+        >
+          <option>Last 6 months</option>
+          <option>Last 12 months</option>
+          <option>Last 24 months</option>
+        </select>
+      </div>
+      <canvas
+        baseChart
+        [type]="'line'"
+        [plugins]="plugins"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+      >
+      </canvas>
+    </div>
+    <div id="legend-container" class="pl-2.5 legend-container"></div>
+  </div>
+  <div class="grid grid-cols-3 gap-x-[2.5%]">
+    @for (reading of readings; let i =$index; track i;) {
+    <div
+      class="h-[242px] p-4 rounded-xl relative"
+      [style.backgroundColor]="reading.bgColor"
+    >
+      <div class="mb-2.5">
+        <img src="{{ reading.icon }}" alt="Reading Icon" />
+      </div>
+      <span class="text-md">{{ reading.title }}</span>
+      <h2 class="text-3xl font-bold">{{ reading.value }}</h2>
+
+      <span class="absolute left-4 bottom-4 text-sm">
+        {{ reading.levels }}
+      </span>
+    </div>
+    }
+  </div>
+</div>
